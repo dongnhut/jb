@@ -1,0 +1,40 @@
+<div class="nested-fields">
+  <div class="field">
+    <b><%= f.object.history_type.capitalize %></b>
+    <%= f.hidden_field :history_type %>
+  </div>
+  <div class="field">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+  <% if f.object.history_type === 'student'  %>
+    <%= f.label :school, 'School' %>
+    <%= f.text_field "detail[school]", :value => f.object.detail['school'] %>
+  <% else %>
+    <%= f.label :company, 'Company' %>
+    <%= f.text_field "detail[company]", :value => f.object.detail['company'] %>
+  <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qualification, 'Qualification' %>
+    <%= f.text_field "detail[qualification]", :value => f.object.detail['qualification'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date, 'Start time' %>
+    <%= f.date_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time, 'End time' %>
+    <%= f.date_field :end_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :achievements, 'Achievements' %>
+    <%= f.text_field "detail[achievements]", :value => f.object.detail['achievements'] %>
+  </div>
+  <%= link_to_remove_association "Remove history", f %>
+</div>
