@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resume of <%= current_user.firstname + ' ' + current_user.lastname %></h1>
+
+<p><b>Skills:</b>
+  <%= @resume.skill %>
+</p>
+<p><b>Expected Salary:</b>
+  $<%= @resume.expected_sal %>
+</p>
+<p><b>Expected Locations:</b>
+  <%= @resume.expected_locations %>
+</p>
+<b><u>Histories</u></b>
+<% @resume.histories.each do |h| %>
+  <div class="prs">
+    <p><b><%= h.history_type.capitalize %></b></p>
+    <hr>
+    <p class="title"><b>Title</b>
+      <%= h.title %>
+    </p>
+    <p>
+      <% if h.history_type === 'student' %>
+        <b>School:</b> <%= h.detail['school'] %>
+      <% else %>
+        <b>Company:</b> <%= h.detail['company'] %>
+      <% end %>
+    </p>
+    <p><b>Qualification</b>
+      <%= h.detail['qualification'] %>
+    </p>
+    <p><b>Start time</b>
+      <%= h.start_time %>
+    </p>
+    <p><b>End time</b>
+      <%= h.end_time %>
+    </p>
+    <p><b>Achievements</b>
+      <%= h.detail['achievements'] %>
+    </p>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>
