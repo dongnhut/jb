@@ -1,0 +1,22 @@
+// Place all the styles related to the resumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+[class^="histories"] {
+  margin: 15px 15px;;
+  padding: 30px;
+  border: 1px solid #e5e5e5;
+  .nested-fields {
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+  }
+}
+
+.prs {
+  border: 1px solid #e5e5e5;
+  padding: 15px 30px;
+}
+
+hr {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 0;
+}

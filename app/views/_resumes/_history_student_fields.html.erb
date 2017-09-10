@@ -1,0 +1,37 @@
+<fieldset>
+  <div class="field">
+    <b>Student</b>
+    <%= f.hidden_field :history_type, :value => 'student' %>
+  </div>
+  <div class="field">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school, 'School' %>
+    <%= f.text_field "detail[:school]", :value => nil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qualification, 'Qualification' %>
+    <%= f.text_field "detail[:qualification]", :value => nil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date, 'Start time' %>
+    <%= f.date_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time, 'End time' %>
+    <%= f.date_field :end_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :achievements, 'Achievements' %>
+    <%= f.text_field "detail[:achievements]", :value => nil %>
+  </div>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>
