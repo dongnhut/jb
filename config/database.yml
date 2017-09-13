@@ -1,0 +1,11 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: tien
+  password: 1
+
+development:
+  <<: *defaults
+  database: jb_development
+  host: localhost
